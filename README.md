@@ -3,7 +3,7 @@
 ## Project Overview
 This project provisions a highly available Nginx infrastructure on AWS using Terraform. It includes:
 
-- ✅ **VPC**: A custom Virtual Private Cloud with CIDR block `172.16.0.0/16`.  
+- ✅ **VPC**: A custom Virtual Private Cloud with CIDR block `192.168.0.0/16`.  
 - ✅ **Subnets**: Two public subnets in different availability zones.  
 - ✅ **Internet Gateway**: For public internet access.  
 - ✅ **Application Load Balancer (ALB)**: Distributes traffic across Nginx instances.  
