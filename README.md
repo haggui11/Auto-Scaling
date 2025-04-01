@@ -27,7 +27,7 @@ This project provisions a highly available Nginx infrastructure on AWS using Ter
 
 - ✅ **Clone the repository**:  
   ```bash
-  git clone https://github.com/ArashMHD91/terraform-aws-ha-nginx.git
+  git clone https://github.com/haggui11/test1.git
 
  ## Step 2: Review and Customize Variables  
  Edit the `variables.tf` file to customize the configuration as needed.  
