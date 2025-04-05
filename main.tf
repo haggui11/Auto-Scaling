@@ -165,6 +165,21 @@ resource "aws_autoscaling_group" "nginx" {
     propagate_at_launch = true
   }
 }
+# Auto Scaling Target Tracking Policy for CPU Utilization
+resource "aws_autoscaling_policy" "cpu_policy" {
+  name                   = "${var.project_name}-cpu-target-tracking-policy"
+  autoscaling_group_name = aws_autoscaling_group.nginx.name
+  policy_type            = "TargetTrackingScaling"
+  
+  target_tracking_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ASGAverageCPUUtilization"
+    }
+    target_value = 50.0
+    # Optional: Uncomment to prevent scale-in
+    # disable_scale_in = false
+  }
+}
 
 # S3 Bucket
 resource "aws_s3_bucket" "storage" {

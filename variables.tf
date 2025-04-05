@@ -68,4 +68,27 @@ variable "common_tags" {
     ManagedBy   = "Terraform"
   }
 }
-#testi
+# Auto Scaling Policy Variables
+variable "cpu_target_value" {
+  description = "Target value for CPU utilization policy (percentage)"
+  type        = number
+  default     = 50
+}
+
+variable "scale_in_cooldown" {
+  description = "Cooldown period in seconds before scaling in"
+  type        = number
+  default     = 300
+}
+
+variable "scale_out_cooldown" {
+  description = "Cooldown period in seconds before scaling out"
+  type        = number
+  default     = 300
+}
+
+variable "disable_scale_in" {
+  description = "Disable scale-in to prevent instance termination during low utilization"
+  type        = bool
+  default     = false
+}
